@@ -5,7 +5,7 @@ app.http('HelloFunc', {
     authLevel: 'anonymous',
     handler: async (request, context) => {
         context.log(`Http function processed request for url "${request.url}"`);
-
+        console.log("came inside the handler")
         const name = request.query.get('name') || await request.text() || 'world';
 
         return { body: `Hello, ${name}!` };
